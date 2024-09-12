@@ -1,0 +1,10 @@
+<div class="search-container">
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Search by country name">
+</div>
+<div class="country-cards">
+  <div *ngFor="let country of filteredCountries" class="country-card" (click)="viewCountryDetails(country)">
+    <img [src]="country.flags.png" alt="{{ country.name }} flag">
+    <h3>{{ country.name }}</h3>
+    <p>{{ country.region }}</p>
+  </div>
+</div>

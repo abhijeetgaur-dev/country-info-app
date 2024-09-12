@@ -1,0 +1,33 @@
+.wrapper{
+  margin-top: 100px;
+}
+
+.country-detail {
+  max-width: 1200px;
+  margin-top: 100px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 20px;
+    flex-grow: 4;
+  }
+
+  .country-detail img{
+    width:500px;
+    margin: 20px;
+  }
+
+  .country-detail h1 {
+    font-size: 45px;
+    margin: 20px 0;
+  }
+
+.country-details{
+  width:300px;
+}
+  

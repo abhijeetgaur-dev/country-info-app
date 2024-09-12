@@ -1,20 +1,31 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
+import { RouterModule, Routes } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CountryListComponent } from './components/country-list/country-list.component';
+import { CountryDetailComponent } from './components/country-detail/country-detail.component';
+
+const routes: Routes = [
+  { path: '', component: CountryListComponent },
+  { path: 'country/:alpha3Code', component: CountryDetailComponent }
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CountryListComponent,
+    CountryDetailComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [
-    provideClientHydration()
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
